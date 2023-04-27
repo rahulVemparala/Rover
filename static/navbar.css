@@ -1,0 +1,17 @@
+nav {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Set a light color with some opacity */
+    backdrop-filter: blur(10px);
+    /* Apply a blur effect to create a frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-wrapper a {
+    color: black !important;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 999;
+}

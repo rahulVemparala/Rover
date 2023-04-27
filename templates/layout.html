@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='alert.css') }}">
+
 
     {% if title %}
     <title>{{title}}</title>
@@ -15,7 +20,96 @@
 </head>
 
 <body>
-  {% block content %}{% endblock content %}
+
+  <!-- navbar start -->
+  <nav>
+    <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Rover</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Profile<i
+              class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="{{url_for('home')}}">Home</a></li>
+    <li><a href="{{url_for('about')}}">About</a></li>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="{{url_for('register')}}">Register</a></li>
+        <li><a href="{{url_for('login')}}">Login</a></li>
+        <li class="divider"></li>
+        <li><a href="{{url_for('signout')}}">SignOut</a></li>
+    </ul>
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Profile<i
+                class="material-icons right">arrow_drop_down</i></a></li>
+</ul>
+
+
+<!-- navbar end -->
+
+
+  <div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        {% if category == 'error' %}
+          <div id= 'fail' class="card red darken-5 thin dismissable">
+            <div class="card-content white-text">
+              <p>{{ message }}</p>
+              <button type="button" class="close" data-dismiss="card">&times;</button>
+            </div>
+          </div>
+        {% else %}
+          <div id= 'pass' class="card green thin dismissable">
+            <div class="card-content white-text">
+              <p>{{ message }}</p>
+              <button type="button" class="close" data-dismiss="card">&times;</button>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  
+  
+
+
+    {% block content %}{% endblock %}
+  </div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+
+
+    <!-- custom js  -->
+    <script>
+      $(document).ready(function() {
+        $('.dismissable').on('click', '.close', function() {
+          $(this).closest('.dismissable').remove();
+        });
+      });
+
+    </script>
+
+    <script>
+
+      $(".dropdown-trigger").dropdown();
+      $(document).ready(function () {
+          $('.sidenav').sidenav();
+      })
+
+  </script>
+
+
+  
+  <!-- custom js end   -->
 </body>
 
 </html>

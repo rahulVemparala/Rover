@@ -1,0 +1,26 @@
+  .thin.dismissable {
+      padding: 0;
+      margin-bottom: 0;
+  }
+
+  .thin.dismissable .card-content {
+      padding: 8px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  #pass .thin.dismissable .card-content p {
+      margin: 0;
+      color: #3c795b;
+  }
+
+  #pass .thin.dismissable .close {
+      background: none;
+      border: none;
+      color: #3c795b;
+      font-size: 24px;
+      margin-left: 8px;
+      cursor: pointer;
+      line-height: 1;
+  }
