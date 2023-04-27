@@ -7,8 +7,9 @@ from flask import render_template, url_for, flash, redirect
 
 from rover.forms import RegistrationForm, LoginForm
 
-from main import app
+from rover import app, db, bcrypt
 
+from rover.database import User
 
 posts = [
     {
@@ -46,8 +47,15 @@ def signout():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
+        hashed_password = bcrypt.generate_password_hash(
+            form.password.data).decode('utf-8')
+        create_user(username=form.username.data,
+                    email=form.email.data,
+                    password=hashed_password
+                    )
+
         flash(
-            message=f"Account created for {form.username.data}", category='success')
+            message=f"Account created for {form.username.data}!", category='success')
         return redirect(url_for('home'))
     return render_template('register2.html', title='Register', form=form)
 
@@ -59,3 +67,15 @@ def login():
         pass
 
     return render_template('login.html', title='Register', form=form)
+
+
+def create_user(**kwargs):
+    with app.app_context():
+        new_user = User(**kwargs)
+        db.session.add(new_user)
+        db.session.commit()
+
+
+def view_all_users():
+    with app.app_context():
+        print(User.query.get_all())
