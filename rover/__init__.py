@@ -14,7 +14,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app=app)
 bcrypt = Bcrypt(app=app)
 login_manager = LoginManager(app=app) 
-
+login_manager.login_view = 'login'
+login_manager.login_message_category = 'info'
 # this import should be after app and db initialization ,to avoid circular imports
 
 from rover.routes import home, about, register, login
