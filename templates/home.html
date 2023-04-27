@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% for post in posts  %}
+    <h1>{{post.artist_name}}</h1>
+    <h2>{{post.country}}</h2>
+    <p>{{post.songs}}</p>
+    
+{% endfor   %}
+
+{% endblock content %}
