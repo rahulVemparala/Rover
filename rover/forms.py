@@ -4,7 +4,7 @@ Register and login forms and various fields
 """
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
-from wtforms import StringField, SubmitField, BooleanField
+from wtforms import StringField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from rover.database import User
 from flask_login import current_user
@@ -61,3 +61,9 @@ class UpdateAccountForm(FlaskForm):
             if User.query.filter_by(email=email.data).first():
                 raise ValidationError(
                     "Email Address already taken, please choose another one ")
+
+
+class PostForm(FlaskForm):
+    title = StringField('Playlist Title', validators=[DataRequired()])
+    content = TextAreaField("Playlist", validators=[DataRequired()])
+    create = SubmitField("Create")

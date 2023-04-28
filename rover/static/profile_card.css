@@ -1,0 +1,38 @@
+.profile-card {
+    display: flex;
+    margin: 2rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.profile-card-image {
+    flex: 1;
+}
+
+.profile-card-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.profile-card-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.profile-card-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.profile-card-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.profile-card-text {
+    font-size: 1.2rem;
+}

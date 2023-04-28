@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="col s12 m6">
+      <div class="card horizontal">
+        <div class="card-image">
+          <img class="rounded-circle account-img" src="{{ image_file }}" style="max-width: 100%; height: auto;">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <form method="POST" action="" enctype="multipart/form-data">
+              {{ form.hidden_tag() }}
+              <fieldset>
+                <legend class="border-bottom mb-4">New Playlist</legend>
+                <div class="input-field">
+                  {{ form.title.label(class="active") }}
+                  {% if form.title.errors %}
+                    {{ form.title(class="invalid") }}
+                    <span class="helper-text" data-error="{% for error in form.title.errors %}{{ error }} {% endfor %}"></span>
+                  {% else %}
+                    {{ form.title }}
+                  {% endif %}
+                </div>
+                <div class="input-field">
+                  {{ form.content.label(class="active") }}
+                  {% if form.content.errors %}
+                    {{ form.content(class="invalid") }}
+                    <span class="helper-text" data-error="{% for error in form.content.errors %}{{ error }} {% endfor %}"></span>
+                  {% else %}
+                    {{ form.content }}
+                  {% endif %}
+                </div>
+                <button type="submit" class="btn waves-effect waves-light">Create</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+{% endblock content %}

@@ -8,7 +8,7 @@ import secrets
 
 from flask import render_template, url_for, flash, redirect, request
 
-from rover.forms import RegistrationForm, LoginForm, UpdateAccountForm
+from rover.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
 
 from rover import app, db, bcrypt
 
@@ -115,6 +115,16 @@ def login():
             flash("Login Unsuccesful, please check Email or Password.",
                   category="error")
     return render_template('login.html', title='Login', form=form)
+
+
+@app.route("/post/new", methods=['POST', 'GET'])
+@login_required
+def new_post():
+    form = PostForm()
+    if form.validate_on_submit():
+        flash("Playlist created!!", 'success')
+        return redirect(url_for('home'))
+    return render_template('create_post.html', title='New Post', form=form)
 
 
 def create_user(**kwargs):
