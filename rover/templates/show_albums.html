@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="playlist-section">
+    <h2>Songs</h2>
+    <div class="row">
+        {% for album in albums %}
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image">
+                    <img src="static/images/albums/changes.jpeg">
+                    <span class="card-title">{{album.name}}</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                            class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                    <p>Artist: {{ album.artist.name }}</p>
+            <p>Release date: {{ album.release_date.strftime('%Y-%m-%d') }}</p>
+                </div>
+            </div>
+        </div>
+    
+        {% endfor  %}
+    </div>
+</div>
+{% endblock content %}

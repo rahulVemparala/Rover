@@ -12,7 +12,7 @@ from rover.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
 
 from rover import app, db, bcrypt
 
-from rover.database import User
+from rover.database import User, Album
 from flask_login import login_user, current_user, logout_user, login_required
 
 posts = [
@@ -40,6 +40,21 @@ def home():
 @app.route("/about")
 def about():
     return render_template('about.html', title='About')
+
+
+@app.route("/album")
+def album():
+    return render_template('albums.html', title='About')
+
+
+@app.route("/playlist")
+def playlist():
+    return render_template('playlists.html', title='About')
+
+
+@app.route("/artist")
+def artist():
+    return render_template('artists.html', title='About')
 
 
 @app.route("/account", methods=['GET', "POST"])
@@ -125,6 +140,13 @@ def new_post():
         flash("Playlist created!!", 'success')
         return redirect(url_for('home'))
     return render_template('create_post.html', title='New Post', form=form)
+
+
+@app.route("/songs")
+def show_songs():
+    albums = Album.query.distinct(Album.name).all()
+    albums = set(albums)
+    return render_template('show_albums.html', albums=albums)
 
 
 def create_user(**kwargs):

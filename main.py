@@ -20,13 +20,6 @@ def insert_db():
     # read data from CSV file
     data = pd.read_parquet('country.parquet')
 
-    # Generate unique ids for each table
-    genre_id = uuid.uuid4().int & (1 << 32)-1
-    artist_id = uuid.uuid4().int & (1 << 32)-1
-    album_id = uuid.uuid4().int & (1 << 32)-1
-    song_id = uuid.uuid4().int & (1 << 32)-1
-    user_id = uuid.uuid4().int & (1 << 32)-1
-
     # Loop through each row of the data and insert into the database
     with app.app_context():
         df = pd.read_parquet('pop.parquet')

@@ -1,0 +1,79 @@
+    .material-icons#album-section,
+    .material-icons#song-section {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .material-icons#album-section:hover {
+        transform: translateX(5px);
+    }
+
+    .material-icons {
+        vertical-align: middle;
+    }
+
+    a {
+        color: black;
+    }
+
+    .collection-item.avatar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .play_circle_filled {
+        margin-left: auto;
+    }
+
+
+    .page-footer {
+        background-color: rgba(255, 255, 255, 0.2);
+        /* Set a light color with some opacity */
+        backdrop-filter: blur(10px);
+        /* Apply a blur effect to create a frosted glass effect */
+        -webkit-backdrop-filter: blur(10px);
+        /* For Safari */
+
+    }
+
+    .page-footer,
+    .page-footer p,
+    .page-footer a {
+        color: black !important;
+    }
+
+    .playlist-category {
+        margin-bottom: 20px;
+    }
+
+
+
+    nav {
+        background-color: rgba(255, 255, 255, 0.2);
+        /* Set a light color with some opacity */
+        backdrop-filter: blur(10px);
+        /* Apply a blur effect to create a frosted glass effect */
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .brand-logo {
+        margin-left: 20px;
+    }
+
+    .brand-logo i {
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+    .nav-wrapper a {
+        color: black !important;
+    }
+
+    .card:hover .card-content {
+        opacity: 1;
+    }
+
+    .card-content {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }

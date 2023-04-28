@@ -1,0 +1,302 @@
+{% extends "layout.html" %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='playlists.css') }}">
+{% block content %}
+  <!-- Page Layout here -->
+  <div class="row">
+
+    <div class="col s12 m4 l2"> <!-- Note that "m4 l3" was added -->
+        <!-- Grey navigation panel
+
+            This content will be:
+        3-columns-wide on large screens,
+        4-columns-wide on medium screens,
+        12-columns-wide on small screens  -->
+        <div class="row">
+            <div>
+                <h4 class="center-align">Playlists</h5>
+            </div>
+            <div class="playlist-category" style="margin-bottom: 20px;">
+                <div class="heading center">
+                    <a href="">
+                        <h6>Recents<i class="material-icons" id="album-section"
+                                style="vertical-align: middle;">chevron_right</i></h6>
+                    </a>
+                </div>
+                <a href='#' onclick="filterObjects('album1')">
+                    <div class="col s12 m8 ">
+                        <div class="card" style="border-radius: 50%;">
+                            <div class="card-image">
+                                <img style='border-radius: 50%;' src="static/images/albums/peaches.jpeg" alt="Placeholder">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href='#' onclick="filterObjects('album2')">
+                    <div class="col s12 m4 ">
+                        <div class="card" style="border-radius: 50%;">
+                            <div class="card-image">
+                                <img style='border-radius: 50%;' src="static/images/albums/peaches.jpeg" alt="Placeholder">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href='#' onclick="filterObjects('album3')">
+                    <div class="col s12 m3 ">
+                        <div class="card" style="border-radius: 50%;">
+                            <div class="card-image">
+                                <img style='border-radius: 50%;' src="static/images/albums/peaches.jpeg" alt="Placeholder">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href='#' onclick="filterObjects('album4')">
+                    <div class="col s12 m4 ">
+                        <div class="card" style="border-radius: 50%;">
+                            <div class="card-image">
+                                <img style='border-radius: 50%;' src="static/images/albums/peaches.jpeg" alt="Placeholder">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+
+            <div class="playlist-category" style="margin-bottom: 20px;">
+                <div class="heading center">
+                    <a href="">
+                        <h6>Genre-playlists<i class="material-icons" id="album-section"
+                                style="vertical-align: middle;">chevron_right</i></h6>
+                    </a>
+                </div>
+                <a href='#' onclick="filterObjects('album1')">
+                    <div class="col s12 m4 ">
+                        <div class="card" style="border-radius: 50%;">
+                            <div class="card-image">
+                                <img style='border-radius: 50%;' src="static/images/albums/peaches.jpeg" alt="Placeholder">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href='#' onclick="filterObjects('album2')">
+                    <div class="col s12 m5 ">
+                        <div class="card" style="border-radius: 50%;">
+                            <div class="card-image">
+                                <img style='border-radius: 50%;' src="static/images/albums/peaches.jpeg" alt="Placeholder">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href='#' onclick="filterObjects('album3')">
+                    <div class="col s12 m8 ">
+                        <div class="card" style="border-radius: 50%;">
+                            <div class="card-image">
+                                <img style='border-radius: 50%;' src="static/images/albums/peaches.jpeg" alt="Placeholder">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href='#' onclick="filterObjects('album4')">
+                    <div class="col s12 m4 ">
+                        <div class="card" style="border-radius: 50%;">
+                            <div class="card-image">
+                                <img style='border-radius: 50%;' src="static/images/albums/peaches.jpeg" alt="Placeholder">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+    <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+        <!-- Teal page content
+
+            This content will be:
+        9-columns-wide on large screens,
+        8-columns-wide on medium screens,
+        12-columns-wide on small screens  -->
+
+
+
+        <div class="song-list">
+            <div onclick="filterObjects('all')">
+                <a>
+                    <h4>Songs <i class="material-icons" id="song-section"
+                            style="vertical-align: middle;">expand_more</i>
+                    </h4>
+
+                </a>
+            </div>
+            <ul class="collection">
+                <div class="song album1">
+                    <li class="collection-item avatar">
+                        <img src="static/images/albums/jazz.jpeg" alt="" class="circle">
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <i id="song-1" class="material-icons">play_circle_filled</i>
+                        <audio id="song-1-audio" src="audio/honest.mp3"></audio>
+                    </li>
+                </div>
+                <div class="song album1">
+                    <li class="collection-item avatar">
+                        <img src="static/images/albums/jazz.jpeg" alt="" class="circle">
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <i id="song-2" class="material-icons">play_circle_filled</i>
+                        <audio id="song-2-audio" src="audio/honest.mp3"></audio>
+                    </li>
+                </div>
+                <div class="song album1">
+                    <li class="collection-item avatar">
+                        <img src="static/images/albums/jazz.jpeg" alt="" class="circle">
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <i id="song-2" class="material-icons">play_circle_filled</i>
+                        <audio id="song-2-audio" src="audio/honest.mp3"></audio>
+                    </li>
+                </div>
+                <div class="song album3">
+                    <li class="collection-item avatar">
+                        <img src="static/images/albums/jazz.jpeg" alt="" class="circle">
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <i id="song-2" class="material-icons">play_circle_filled</i>
+                        <audio id="song-2-audio" src="audio/honest.mp3"></audio>
+                    </li>
+                </div>
+                <div class="song album1">
+                    <li class="collection-item avatar">
+                        <img src="static/images/albums/jazz.jpeg" alt="" class="circle">
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <i id="song-2" class="material-icons">play_circle_filled</i>
+                        <audio id="song-2-audio" src="audio/honest.mp3"></audio>
+                    </li>
+                </div>
+
+                <div class="song album2">
+                    <li class="collection-item avatar">
+                        <img src="static/images/albums/peaches.jpeg" alt="" class="circle">
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <i id="song-3" class="material-icons">play_circle_filled</i>
+                        <audio id="song-3-audio" src="audio/blue.mp3"></audio>
+                    </li>
+                </div>
+                <div class="song album2">
+                    <li class="collection-item avatar">
+                        <img src="static/images/albums/Usher.jpeg" alt="" class="circle">
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <i id="song-4" class="material-icons">play_circle_filled</i>
+                        <audio id="song-4-audio" src="audio/gta.mp3"></audio>
+                    </li>
+                </div>
+                <div class="song album2">
+                    <li class="collection-item avatar">
+                        <img src="static/images/albums/Usher.jpeg" alt="" class="circle">
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <i id="song-4" class="material-icons">play_circle_filled</i>
+                        <audio id="song-4-audio" src="audio/gta.mp3"></audio>
+                    </li>
+                </div>
+                <div class="song album4">
+                    <li class="collection-item avatar">
+                        <img src="static/images/albums/Usher.jpeg" alt="" class="circle">
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <i id="song-4" class="material-icons">play_circle_filled</i>
+                        <audio id="song-4-audio" src="audio/gta.mp3"></audio>
+                    </li>
+                </div>
+                <div class="song album">
+                    <li class="collection-item avatar">
+                        <img src="static/images/albums/Usher.jpeg" alt="" class="circle">
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <i id="song-4" class="material-icons">play_circle_filled</i>
+                        <audio id="song-4-audio" src="audio/gta.mp3"></audio>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<!-- floating button to top :  -->
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+        <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+        <li><a href='index.html' class="btn-floating yellow darken-1"><i class="material-icons">home</i></a>
+        </li>
+        <li><a href="about.html" class="btn-floating green"><i class="material-icons">group
+                </i></a></li>
+        <li><a href="#nav-bar" class="btn-floating blue"><i class="material-icons">arrow_upward</i></a></li>
+    </ul>
+</div>
+
+<!-- floating button to top : end -->
+
+<!-- footer start -->
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5>Artist Page: Rover</h5>
+                <p class=" text-lighten-4">Presenting the best work of your favorite artist, top songs from
+                    each albums,
+                    interact with the albums and see your favorite songs
+                </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5>Links</h5>
+                <ul>
+                    <li><a class="text-lighten-3" href="#album-section">Albums</a></li>
+                    <li><a class="text-lighten-3" href="#song-section">Songs</a></li>
+                    <li><a class="text-lighten-3" href="#!">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container black-text">
+            © 2023 Copyright Text
+            <a class="text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
+<!-- footer end -->
+<script src="static/js/script.js"></script>
+<script src="static/js/playlists.js"></script>
+{% endblock content %}
