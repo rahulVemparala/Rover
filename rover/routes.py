@@ -46,14 +46,40 @@ def album():
     return render_template('albums.html', title='About')
 
 
-@app.route("/playlist")
+@app.route("/playlist", methods=['GET', 'POST'])
+@login_required
 def playlist():
     return render_template('playlists.html', title='About')
 
 
 @app.route("/artist")
 def artist():
-    return render_template('artists.html', title='About')
+    return render_template('artists.html', title='Artist')
+
+
+@app.route("/chart")
+def chart():
+    return render_template('charts.html', title='Artist')
+
+
+@app.route("/cb")
+def cb():
+    return render_template('cb.html', title='Chris Brown')
+
+
+@app.route("/usher")
+def usher():
+    return render_template('usher.html', title='Usher')
+
+
+@app.route("/mj")
+def mj():
+    return render_template('mj.html', title='Usher')
+
+
+@app.route("/kai")
+def kai():
+    return render_template('kai.html', title='Usher')
 
 
 @app.route("/account", methods=['GET', "POST"])
@@ -111,7 +137,7 @@ def register():
         flash(
             message=f"Account created for {form.username.data}!", category='success')
         return redirect(url_for('login'))
-    return render_template('register2.html', title='Register', form=form)
+    return render_template('register.html', title='Register', form=form)
 
 
 @app.route("/login", methods=["GET", "POST"])

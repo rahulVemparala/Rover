@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='account.css') }}">
 
 {% block content %}
   
@@ -40,8 +41,26 @@
   </div>
 
   <!-- profile card end  -->
+  
+
+    <!-- user stats analytics -->
+    <h1 class="mdc-typography-display1">User Analytics</h1>
+    <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__cell">
+            <canvas id="chart1"></canvas>
+        </div>
+        <div class="mdc-layout-grid__cell">
+            <canvas id="chart2"></canvas>
+        </div>
+    </div>
 
 
+    <!-- user stats analytics end  -->
+
+
+
+    <script src="static/js/script.js"></script>
+    <script src="static/js/user_analytics.js"></script>
   
 {% endblock content %}
 

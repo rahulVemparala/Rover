@@ -1,0 +1,290 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- materialize  styles cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- materialize styles cdn end  -->
+
+    <!-- custom css  -->
+    <style>
+        a {
+            color: black;
+        }
+
+
+
+
+        .page-footer {
+            background-color: rgba(255, 255, 255, 0.2);
+            /* Set a light color with some opacity */
+            backdrop-filter: blur(10px);
+            /* Apply a blur effect to create a frosted glass effect */
+            -webkit-backdrop-filter: blur(10px);
+            /* For Safari */
+
+        }
+
+        .page-footer,
+        .page-footer p,
+        .page-footer a {
+            color: black !important;
+        }
+
+        canvas {
+            max-width: 600px;
+            max-height: 400px;
+        }
+
+        .mdc-layout-grid {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+        }
+
+        .mdc-layout-grid__cell {
+            flex: 1;
+        }
+
+
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.2);
+            /* Set a light color with some opacity */
+            backdrop-filter: blur(10px);
+            /* Apply a blur effect to create a frosted glass effect */
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .brand-logo {
+            margin-left: 20px;
+        }
+
+        .brand-logo i {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .nav-wrapper a {
+            color: black !important;
+        }
+
+        .card:hover .card-content {
+            opacity: 1;
+        }
+
+        .card-content {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+    </style>
+
+
+    <title>Artists</title>
+</head>
+
+<body style="background-image: url(images/wal7.jpg);">
+
+
+    <nav id="nav-bar">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Rover</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="playlists.html">Playlists</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="playlists.html">Playlists</a></li>
+        <li><a href="profile.html">Profile</a></li>
+    </ul>
+
+
+    <!-- navbar end -->
+
+
+
+
+
+    <!-- floating button to top :  -->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a href='index.html' class="btn-floating yellow darken-1"><i class="material-icons">home</i></a>
+            </li>
+            <li><a href="about.html" class="btn-floating green"><i class="material-icons">group
+                    </i></a></li>
+            <li><a href="#nav-bar" class="btn-floating blue"><i class="material-icons">arrow_upward</i></a></li>
+        </ul>
+    </div>
+
+    <!-- floating button to top : end -->
+
+
+    <!-- user stats analytics -->
+    <h1 class="mdc-typography-display1">User Analytics</h1>
+    <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__cell">
+            <canvas id="chart1"></canvas>
+        </div>
+        <div class="mdc-layout-grid__cell">
+            <canvas id="chart2"></canvas>
+        </div>
+    </div>
+
+
+    <!-- user stats analytics end  -->
+
+    <!-- footer start -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5>Profile Page</h5>
+                    <p class=" text-lighten-4">User stats and browsing activity
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5>Links</h5>
+                    <ul>
+                        <li><a class="text-lighten-3" href="index.html">Home</a></li>
+                        <li><a class="text-lighten-3" href="playlists.html">Playlists</a></li>
+                        <li><a class="text-lighten-3" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container black-text">
+                © 2023 Copyright Text
+                <a class="text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- materialize JS cdn start  -->
+
+
+    <!-- custom js  -->
+    <script>
+        let currentAudio = null;
+
+        // get all the play buttons and add event listeners to each one
+        const playBtns = document.querySelectorAll('.material-icons');
+        playBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const songId = btn.id;
+                const audio = document.querySelector(`#${songId}-audio`);
+
+                // pause the previously playing audio, if any
+                if (currentAudio && currentAudio !== audio) {
+                    currentAudio.pause();
+                    currentAudio.previousElementSibling.innerText = 'play_circle_filled';
+                }
+
+                // play the new audio
+                if (audio.paused) {
+                    audio.play();
+                    btn.innerText = 'pause_circle_filled';
+                    currentAudio = audio;
+                } else {
+                    audio.pause();
+                    btn.innerText = 'play_circle_filled';
+                    currentAudio = null;
+                }
+            });
+        });
+    </script>
+    <script>
+        // First Pie Chart
+        var ctx1 = document.getElementById("chart1").getContext("2d");
+        var chart1 = new Chart(ctx1, {
+            type: "pie",
+            data: {
+                labels: ["Pop", "Rock", "Dance", "Rap", "Hip-Hop", "Country", "EDM"],
+                datasets: [
+                    {
+                        label: "View Count",
+                        data: [10, 20, 15, 5, 8, 12, 30],
+                        backgroundColor: [
+                            "#FF6384",
+                            "#36A2EB",
+                            "#FFCE56",
+                            "#1E90FF",
+                            "#9400D3",
+                            "#008000",
+                            "#FF69B4",
+                        ],
+                        hoverBackgroundColor: [
+                            "#FF6384",
+                            "#36A2EB",
+                            "#FFCE56",
+                            "#1E90FF",
+                            "#9400D3",
+                            "#008000",
+                            "#FF69B4",
+                        ],
+                    },
+                ],
+            },
+        });
+
+        // Second Pie Chart
+        var ctx2 = document.getElementById("chart2").getContext("2d");
+        var chart2 = new Chart(ctx2, {
+            type: "pie",
+            data: {
+                labels: ["Pop", "Rock", "Dance", "Rap", "Hip-Hop", "Country", "EDM"],
+                datasets: [
+                    {
+                        label: "Favorite Genre",
+                        data: [5, 15, 10, 20, 25, 8, 17],
+                        backgroundColor: [
+                            "#FF6384",
+                            "#36A2EB",
+                            "#FFCE56",
+                            "#1E90FF",
+                            "#9400D3",
+                            "#008000",
+                            "#FF69B4",
+                        ],
+                        hoverBackgroundColor: [
+                            "#FF6384",
+                            "#36A2EB",
+                            "#FFCE56",
+                            "#1E90FF",
+                            "#9400D3",
+                            "#008000",
+                            "#FF69B4",
+                        ],
+                    },
+                ],
+            },
+        });
+    </script>
+
+    <!-- custom js end   -->
+</body>
+
+
+
+</html>

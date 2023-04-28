@@ -1,0 +1,268 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+    <!-- navbar end -->
+
+    <!-- wall cover start -->
+    <div id="about-card" class="col s12 m8 offset-m2 l6 offset-l3">
+
+        <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="about-heading">
+                <h3></h3>
+            </div>
+            <div class="row valign-wrapper justify-content">
+
+                <div class="col s2">
+                    <img src="static/images/artists/kai.jpeg" alt="" class="circle responsive-img">
+                    <!-- notice the "circle" class -->
+                </div>
+
+                <div class="col s10 text-right flow-text">
+                    <span class="black-text">
+                        Kim Jong-in better known as Kai (Korean: 카이), is a South Korean singer, model, actor, and dancer.
+                        He is a member of the South Korean-Chinese boy group Exo, its sub unit Exo-K, and South Korean supergroup SuperM. He debuted as a soloist in November 2020 
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- wall cover end  -->
+
+
+    <!-- Page Layout here -->
+    <div class="row">
+
+        <div class="col s12 m4 l2"> <!-- Note that "m4 l3" was added -->
+            <!-- Grey navigation panel
+  
+                This content will be:
+            3-columns-wide on large screens,
+            4-columns-wide on medium screens,
+            12-columns-wide on small screens  -->
+            <div class="album-list">
+                <div class="heading">
+                    <a href="">
+                        <h4>Albums<i class="material-icons" id="album-section"
+                                style="vertical-align: middle;">chevron_right</i></h4>
+                    </a>
+                </div>
+
+                <div class="col m12 m6">
+                    <div class="card" onclick="filterObjects('album1')">
+                        <div class="card-image">
+                            <img src="static/images/albums/kai1.jpeg">
+                            <a class="btn-floating halfway-fab waves-effect waves-light red">
+                                <i class="material-icons">play_arrow</i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>First Solo Album (2019)</p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="filterObjects('album2')">
+                        <div class="card-image">
+                            <img src="static/images/albums/peaches.jpeg">
+                            <a href="#albums" class="btn-floating halfway-fab waves-effect waves-light red">
+                                <i class="material-icons">play_arrow</i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>First Solo Album (2021)</p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="filterObjects('album3')">
+                        <div class="card-image">
+                            <img src="static/images/albums/kai3.jpeg">
+                            <a class="btn-floating halfway-fab waves-effect waves-light red">
+                                <i class="material-icons">play_arrow</i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>First Solo Album (2023)</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+            <!-- Teal page content
+  
+                This content will be:
+            9-columns-wide on large screens,
+            8-columns-wide on medium screens,
+            12-columns-wide on small screens  -->
+
+
+
+            <div class="song-list">
+                <div onclick="filterObjects('all')">
+                    <a>
+                        <h4>Songs <i class="material-icons" id="song-section" style="vertical-align: middle;">list</i>
+                        </h4>
+
+                    </a>
+                </div>
+                <ul class="collection">
+                    <div class="song album1">
+                        <li class="collection-item avatar">
+                            <img src="static/images/albums/kai1.jpeg" alt="" class="circle">
+                            <span class="title">Mmh</span>
+                            <p>Kim Jongin <br>
+                                Kai the Album
+                            </p>
+                            <i id="song-1" class="material-icons">play_circle_filled</i>
+                            <audio id="song-1-audio" src="audio/honest.mp3"></audio>
+                        </li>
+                    </div>
+                    <div class="song album1">
+                        <li class="collection-item avatar">
+                            <img src="static/images/albums/kai1.jpeg" alt="" class="circle">
+                            <span class="title">Reason</span>
+                            <p>Kim Jongin <br>
+                                First Mini Album
+                            </p>
+                            <i id="song-2" class="material-icons">play_circle_filled</i>
+                            <audio id="song-2-audio" src="audio/honest.mp3"></audio>
+                        </li>
+                    </div>
+                    <div class="song album1">
+                        <li class="collection-item avatar">
+                            <img src="static/images/albums/kai1.jpeg" alt="" class="circle">
+                            <span class="title">Amnesia</span>
+                            <p>Kim Jongin <br>
+                                First Mini album
+                            </p>
+                            <i id="song-2" class="material-icons">play_circle_filled</i>
+                            <audio id="song-2-audio" src="audio/honest.mp3"></audio>
+                        </li>
+                    </div>
+                    <div class="song album3">
+                        <li class="collection-item avatar">
+                            <img src="static/images/albums/kai3.jpeg" alt="" class="circle">
+                            <span class="title">Rover</span>
+                            <p>kim Jongin <br>
+                                Rover
+                            </p>
+                            <i id="song-2" class="material-icons">play_circle_filled</i>
+                            <audio id="song-2-audio" src="audio/honest.mp3"></audio>
+                        </li>
+                    </div>
+                    <div class="song album1">
+                        <li class="collection-item avatar">
+                            <img src="static/images/albums/kai1.jpeg" alt="" class="circle">
+                            <span class="title">Ride or Die</span>
+                            <p>Kim Jongin <br>
+                                First Mini album
+                            </p>
+                            <i id="song-2" class="material-icons">play_circle_filled</i>
+                            <audio id="song-2-audio" src="audio/honest.mp3"></audio>
+                        </li>
+                    </div>
+
+                    <div class="song album2">
+                        <li class="collection-item avatar">
+                            <img src="static/images/albums/peaches.jpeg" alt="" class="circle">
+                            <span class="title">Peaches</span>
+                            <p>Kim Jongin<br>
+                                Peaches
+                            </p>
+                            <i id="song-3" class="material-icons">play_circle_filled</i>
+                            <audio id="song-3-audio" src="audio/blue.mp3"></audio>
+                        </li>
+                    </div>
+                    <div class="song album2">
+                        <li class="collection-item avatar">
+                            <img src="static/images/albums/peaches.jpeg" alt="" class="circle">
+                            <span class="title">Come In</span>
+                            <p>Kim Jongin <br>
+                                Peaches
+                            </p>
+                            <i id="song-4" class="material-icons">play_circle_filled</i>
+                            <audio id="song-4-audio" src="audio/gta.mp3"></audio>
+                        </li>
+                    </div>
+                    <div class="song album2">
+                        <li class="collection-item avatar">
+                            <img src="static/images/albums/peaches.jpeg" alt="" class="circle">
+                            <span class="title">To be Honest</span>
+                            <p>Kim Jongin<br>
+                                Peaches
+                            </p>
+                            <i id="song-4" class="material-icons">play_circle_filled</i>
+                            <audio id="song-4-audio" src="audio/gta.mp3"></audio>
+                        </li>
+                    </div>
+        
+                    <div class="song album3">
+                        <li class="collection-item avatar">
+                            <img src="static/images/albums/kai3.jpeg" alt="" class="circle">
+                            <span class="title">Black Mirror</span>
+                            <p>Kim Jongin <br>
+                                Rover
+                            </p>
+                            <i id="song-4" class="material-icons">play_circle_filled</i>
+                            <audio id="song-4-audio" src="audio/gta.mp3"></audio>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- floating button to top :  -->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a href='index.html' class="btn-floating yellow darken-1"><i class="material-icons">home</i></a></li>
+            <li><a href="about.html" class="btn-floating green"><i class="material-icons">group
+                    </i></a></li>
+            <li><a href="#nav-bar" class="btn-floating blue"><i class="material-icons">arrow_upward</i></a></li>
+        </ul>
+    </div>
+
+    <!-- floating button to top : end -->
+
+    <!-- footer start -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5>Artist Page: Rover</h5>
+                    <p class=" text-lighten-4">Presenting the best work of your favorite artist, top songs from
+                        each albums,
+                        interact with the albums and see your favorite songs
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5>Links</h5>
+                    <ul>
+                        <li><a class="text-lighten-3" href="#album-section">Albums</a></li>
+                        <li><a class="text-lighten-3" href="#song-section">Songs</a></li>
+                        <li><a class="text-lighten-3" href="#!">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container black-text">
+                © 2023 Copyright Text
+                <a class="text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+    
+    <script src="static/js/script.js"></script>
+    <script src="static/js/artists.js"></script>
+{% endblock content %}
+    <!-- materialize JS cdn start  -->
+
+

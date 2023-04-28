@@ -31,10 +31,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{url_for('artist')}}">Artists</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{url_for('album')}}">Album</a>
                         </li>
@@ -103,15 +99,16 @@
 
                     <!-- start song item  -->
                     <div class="small-song m-2 ms-4  col-md-6 row align-items-center">
-                        <div class="col-1 col h3">02</div>
+                        <div class="col-1 col h3">01</div>
                         <div class="col align-items-center d-flex"><img class='rounded m-1'
                                 src="static/images/albums/eightmonths.jpg" style="width: 50px;height:50px;object-fit:cover"
                                 alt="album art">
-                            <div class="m-2 ">* Months
+                            <div class="m-2 ">8 Months
                                 <div class="text-muted">Calvin Harris</div>
                             </div>
                         </div>
-                        <div class="col-2">3:27 <i class="bi bi-play-circle-fill"></i></div>
+                        <div class="col-2">3:27<audio id="song-4-audio" src="audio/gta.mp3"></audio>
+                        </div>
                     </div>
                     <!-- end song item -->
               
@@ -194,47 +191,55 @@
                 <h3 class="mb-1">Albums<i class="bi bi-play-circle-fill"></i></h3>
             </a>
             <div class="m-2 row row-cols-2 row-cols-md-5 flex-nowrap overflow-auto rounded">
-                <a href="albums.html">
+                <a href="{{url_for('album')}}">
                     <div class="col mb-4">
                         <div class="card h-100" style="height: 200px; overflow: hidden;">
-                            <img src="images/jazz.jpeg" class="card-img-top" alt="...">
+                            <img src="static/images/albums/changes.jpeg" class="card-img-top" alt="...">
                             <div class="card-body" ">
-                                <h5 class=" card-title">Album1</h5>
-                                <p class="card-text">Artist Name</p>
+                                <h5 class=" card-title">Changes</h5>
+                                <p class="card-text">Justin Bieber</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{url_for('album')}}">
+                    <div class="col mb-4">
+                        <div class="card h-100" style="height: 200px; overflow: hidden;">
+                            <img src="static/images/albums/thriller.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body" ">
+                                <h5 class=" card-title">Thriller</h5>
+                                <p class="card-text">Michael Jackson</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{url_for('album')}}">
+                    <div class="col mb-4">
+                        <div class="card h-100" style="height: 200px; overflow: hidden;">
+                            <img src="static/images/albums/peaches.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body" ">
+                                <h5 class=" card-title">Peaches</h5>
+                                <p class="card-text">Kim Jongin</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{url_for('album')}}">
+                    <div class="col mb-4">
+                        <div class="card h-100" style="height: 200px; overflow: hidden;">
+                            <img src="static/images/albums/sticker.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body" ">
+                                <h5 class=" card-title">Sticker</h5>
+                                <p class="card-text">NCT 127</p>
                             </div>
                         </div>
                     </div>
                 </a>
 
-                <a href="albums.html">
-                    <div class="col mb-4">
-                        <div class="card h-100" style="height: 200px; overflow: hidden;">
-                            <img src="images/jazz.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body" ">
-                                <h5 class=" card-title">Album1</h5>
-                                <p class="card-text">Artist Name</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="albums.html">
-                    <div class="col mb-4">
-                        <div class="card h-100" style="height: 200px; overflow: hidden;">
-                            <img src="images/jazz.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body" ">
-                                <h5 class=" card-title">Album1</h5>
-                                <p class="card-text">Artist Name</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
 
                 <!-- Add more cards as needed -->
             </div>
         </div>
-
-        <!-- genre category end -->
 
 
         <!-- start Artist area -->
@@ -246,55 +251,45 @@
             </a>
             </a>
             <div class="m-2 row row-cols-2 row-cols-md-5 flex-nowrap overflow-auto rounded">
-                <a href="kai.html">
+                <a href="{{url_for('cb')}}">
                     <div class="col mb-4">
                         <div class="card h-100" style="height: 200px; overflow: hidden;">
-                            <img src="images/kai_square_800.jpg" class="card-img-top" alt="...">
+                            <img src="static/images/artists/cb.jpg" class="card-img-top" alt="...">
                             <div class="card-body" ">
-                                <h5 class=" card-title">Kai</h5>
-                                <p class="card-text">Dance lead of the infomous Kpop Group EXO.</p>
+                                <h5 class=" card-title">Chris Brown</h5>
+                                <p class="card-text">Christopher Maurice Brown is an American singer, songwriter, dancer, and actor.</p>
                             </div>
                         </div>
                     </div>
                 </a>
 
-                <a href="usher.html">
+   
+                <a href="{{url_for('usher')}}">
                     <div class="col mb-4">
                         <div class="card h-100" style="height: 200px; overflow: hidden;">
-                            <img src="images/artists/Usher.jpg" class="card-img-top" alt="...">
+                            <img src="static/images/artists/Usher.jpg" class="card-img-top" alt="...">
                             <div class="card-body" ">
-                                <h5 class=" card-title">Usher</h5>
-                                <p class="card-text">King of RnB Soul Music, one of the best dancer's in the 90's Era
-                                </p>
+                                <h5 class=" card-title">Usher Raymond</h5>
+                                <p class="card-text">Usher Raymond IV (born October 14, 1978) is an American R&B singer. </p>
                             </div>
                         </div>
                     </div>
                 </a>
 
-                <a href="kai.html">
+   
+                <a href="{{url_for('kai')}}">
                     <div class="col mb-4">
                         <div class="card h-100" style="height: 200px; overflow: hidden;">
-                            <img src="images/kai_square_800.jpg" class="card-img-top" alt="...">
+                            <img src="static/images/artists/kai_profile.jpeg" class="card-img-top" alt="...">
                             <div class="card-body" ">
-                                <h5 class=" card-title">Kai</h5>
-                                <p class="card-text">Dance lead of the infomous Kpop Group EXO.</p>
+                                <h5 class=" card-title">Kim Jongin</h5>
+                                <p class="card-text">Kim Jong-in, better known as Kai, is a South Korean singer, model, actor, and dancer.</p>
                             </div>
                         </div>
                     </div>
                 </a>
 
-                <a href="kai.html">
-                    <div class="col mb-4">
-                        <div class="card h-100" style="height: 200px; overflow: hidden;">
-                            <img src="images/kai_square_800.jpg" class="card-img-top" alt="...">
-                            <div class="card-body" ">
-                                <h5 class=" card-title">Kai</h5>
-                                <p class="card-text">Dance lead of the infomous Kpop Group EXO.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
+   
                 <!-- Add more cards as needed -->
             </div>
         </div>
@@ -305,68 +300,59 @@
 
         <div id="playlist-section" class="container-fluid overflow:hidden">
             <a href="playlists.html">
-                <h3 class="mb-1">Playlists <i class="bi bi-play-circle-fill"></i></h3>
+                <h3 class="mb-1">Genres <i class="bi bi-play-circle-fill"></i></h3>
             </a>
             <div class="m-2 row row-cols-2 row-cols-md-5 flex-nowrap overflow-auto rounded">
-                <a href="playlists.html">
+                <a href="{{url_for('playlist')}}">
                     <div class="col mb-4">
                         <div class="card h-100" style="height: 200px; overflow: hidden;">
-                            <img src="images/kai_square_800.jpg" class="card-img-top" alt="...">
+                            <img src="static/images/genres/dance.jpeg" class="card-img-top" alt="...">
                             <div class="card-body" ">
-                                <h5 class=" card-title">User playlist 1</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the card's content.</p>
+                                <h5 class=" card-title">Dance music</h5>
+                                <p class="card-text">Precussion beats and heavy 808 synths that make you groove to the music</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{url_for('playlist')}}">
+                    <div class="col mb-4">
+                        <div class="card h-100" style="height: 200px; overflow: hidden;">
+                            <img src="static/images/genres/jazz.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body" ">
+                                <h5 class=" card-title">Jazz</h5>
+                                <p class="card-text">Classy yet chaotic Jazz instruments</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{url_for('playlist')}}">
+                    <div class="col mb-4">
+                        <div class="card h-100" style="height: 200px; overflow: hidden;">
+                            <img src="static/images/genres/rock.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body" ">
+                                <h5 class=" card-title">Rock</h5>
+                                <p class="card-text">Rock music to cheer you up and motivate you</p>
                             </div>
                         </div>
                     </div>
                 </a>
 
-                <a href="playlists.html">
+   
+
+       
+                <a href="{{url_for('playlist')}}">
                     <div class="col mb-4">
                         <div class="card h-100" style="height: 200px; overflow: hidden;">
-                            <img src="images/kai_square_800.jpg" class="card-img-top" alt="...">
+                            <img src="static/images/genres/reggae.jpeg" class="card-img-top" alt="...">
                             <div class="card-body" ">
-                                <h5 class=" card-title">User playlist 1</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the card's content.</p>
+                                <h5 class=" card-title">Raggae</h5>
+                                <p class="card-text">Groovy Raggaeton beat for a chill evening</p>
                             </div>
                         </div>
                     </div>
                 </a>
 
-                <a href="playlists.html">
-                    <div class="col mb-4">
-                        <div class="card h-100" style="height: 200px; overflow: hidden;">
-                            <img src="images/kai_square_800.jpg" class="card-img-top" alt="...">
-                            <div class="card-body" ">
-                                <h5 class=" card-title">User playlist 1</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="playlists.html">
-                    <div class="col mb-4">
-                        <div class="card h-100" style="height: 200px; overflow: hidden;">
-                            <img src="images/kai_square_800.jpg" class="card-img-top" alt="...">
-                            <div class="card-body" ">
-                                <h5 class=" card-title">User playlist 1</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+       
 
                 <!-- Add more cards as needed -->
             </div>
@@ -382,33 +368,34 @@
 
 <script>
     let currentAudio = null;
-
+  
     // get all the play buttons and add event listeners to each one
-    const playBtns = document.querySelectorAll('.bi-play-circle-fill');
+    const playBtns = document.querySelectorAll('.play-btn');
     playBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const songId = btn.id;
-            const audio = document.querySelector(`#${songId}-audio`);
-
-            // pause the previously playing audio, if any
-            if (currentAudio && currentAudio !== audio) {
-                currentAudio.pause();
-                currentAudio.previousElementSibling.innerText = 'play_circle_filled';
-            }
-
-            // play the new audio
-            if (audio.paused) {
-                audio.play();
-                btn.innerText = 'pause_circle_filled';
-                currentAudio = audio;
-            } else {
-                audio.pause();
-                btn.innerText = 'play_circle_filled';
-                currentAudio = null;
-            }
-        });
+      btn.addEventListener('click', () => {
+        const songId = btn.getAttribute('data-song-id');
+        const audio = document.querySelector(`#${songId}-audio`);
+  
+        // pause the previously playing audio, if any
+        if (currentAudio && currentAudio !== audio) {
+          currentAudio.pause();
+          currentAudio.previousElementSibling.innerHTML = '<i class="bi bi-play-circle-fill"></i>';
+        }
+  
+        // play the new audio
+        if (audio.paused) {
+          audio.play();
+          btn.innerHTML = '<i class="bi bi-pause-circle-fill"></i>';
+          currentAudio = audio;
+        } else {
+          audio.pause();
+          btn.innerHTML = '<i class="bi bi-play-circle-fill"></i>';
+          currentAudio = null;
+        }
+      });
     });
-</script>
+  </script>
+  
 
 
 </html>
