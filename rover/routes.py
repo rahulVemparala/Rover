@@ -4,7 +4,6 @@ routes for our website
 """
 import os
 import secrets
-# from PIL import Image
 
 from flask import render_template, url_for, flash, redirect, request
 
@@ -34,7 +33,7 @@ posts = [
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', posts=posts)
+    return render_template('index.html', posts=posts)
 
 
 @app.route("/about")

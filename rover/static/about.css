@@ -1,0 +1,38 @@
+@media only screen and (min-width: 350px) {
+    .valign-wrapper>.col.s8 {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .valign-wrapper>.col.s8 h4 {
+        margin-top: 0;
+    }
+}
+
+nav {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Set a light color with some opacity */
+    backdrop-filter: blur(10px);
+    /* Apply a blur effect to create a frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-wrapper a {
+    color: black !important;
+}
+
+.page-footer {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Set a light color with some opacity */
+    backdrop-filter: blur(10px);
+    /* Apply a blur effect to create a frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari */
+
+}
+
+.page-footer,
+.page-footer p,
+.page-footer a {
+    color: black !important;
+}

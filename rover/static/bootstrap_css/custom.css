@@ -1,6 +1,6 @@
 body {
     min-width: 350px;
-    background-image: url(../images/wal1.jpeg);
+    background-image: url(static/images/wals/wal1.jpeg);
     min-height: 1000px;
     background-size: 100%;
 }
