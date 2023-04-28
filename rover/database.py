@@ -53,7 +53,7 @@ class Artist(db.Model):
 
 class Album(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
     artist_id = db.Column(db.Integer, db.ForeignKey(
         'artist.id'), nullable=False)
     release_date = db.Column(
@@ -67,7 +67,7 @@ class Album(db.Model):
 
 class Playlist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(500))
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
@@ -82,7 +82,7 @@ class Playlist(db.Model):
 
 class Song(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
     duration = db.Column(db.Integer, nullable=False)
     album_id = db.Column(db.Integer, db.ForeignKey('album.id'))
     file_path = db.Column(db.String(200), nullable=False)
